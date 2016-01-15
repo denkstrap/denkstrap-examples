@@ -1,0 +1,45 @@
+development:
+    description: 'Development build task'
+    tasks:
+        - 'sass_globbing'
+        - 'sass:development'
+        - 'autoprefixer:development'
+        - 'lint'
+        - 'lodashAutobuild'
+        - 'requirejs:development'
+
+dev:
+    description: 'Shortcut für development task'
+    tasks:
+        - 'development'
+
+production:
+    description: 'Production build task'
+    tasks:
+        - 'sass_globbing'
+        - 'sass:production'
+        - 'autoprefixer:production'
+        - 'lint'
+        - 'lodashAutobuild'
+        - 'requirejs:production'
+
+prod:
+    description: 'Shortcut für production task'
+    tasks:
+        - 'production'
+
+lint:
+    description: 'Linting task for development'
+    tasks:
+        - 'jshint:grunt'
+        - 'jscs:grunt'
+        - 'scsslint:scss'
+        - 'jshint:frontend'
+        - 'jscs:frontend'
+
+lint_ci:
+    description: 'Linting task for the CI server'
+    tasks:
+        - 'scsslint:scss'
+        - 'jshint:ci'
+        - 'jscs:ci'
